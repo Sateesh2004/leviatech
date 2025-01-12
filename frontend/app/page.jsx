@@ -28,7 +28,7 @@ export default function Dashboard() {
   
     try {
      
-      const response = await fetch('http://localhost:2933/api/patients', {
+      const response = await fetch('https://leviabackend-production.up.railway.app/api/patients', {
         method: 'POST',
         credentials: "include",
         headers: {
@@ -70,7 +70,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:2933/api/patient-count');
+        const response = await fetch('https://leviabackend-production.up.railway.app/api/patient-count');
         const data = await response.json();
        console.log(data) 
        setCount(data)
