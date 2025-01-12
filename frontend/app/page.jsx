@@ -28,7 +28,7 @@ export default function Dashboard() {
   
     try {
      
-      const response = await fetch('https://leviabackend-production.up.railway.app/api/patients', {
+      const response = await fetch('http://localhost:2933/api/patients', {
         method: 'POST',
         credentials: "include",
         headers: {
@@ -46,7 +46,7 @@ export default function Dashboard() {
           email: '',
           phone: '',
           dateOfBirth: '',
-          patientType: '', // Reset patientType as well
+          patientType: '', 
         });
        
 
@@ -70,7 +70,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://leviabackend-production.up.railway.app/api/patient-count');
+        const response = await fetch('http://localhost:2933/api/patient-count');
         const data = await response.json();
        console.log(data) 
        setCount(data)
@@ -232,7 +232,7 @@ export default function Dashboard() {
                 <div className="absolute h-[50%] rounded-lg w-full bg-white top-0">
                 <h3 className="text-4xl font-bold text-cyan-500 flex justify-center items-center h-full text-center leading-[110px]">
                   
-                {count.ipdCount||<div> <LoaderCircle className="animate-spin h-10 w-10" /></div>}
+                {count.opdCount||<div> <LoaderCircle className="animate-spin h-10 w-10" /></div>}
                   </h3>
                 </div>
                 <div className="absolute h-[50%] rounded-lg w-full bg-cyan-500 bottom-0">
