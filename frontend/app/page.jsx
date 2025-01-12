@@ -1,9 +1,10 @@
 "use client";
 
-import { Search, Users, UserPlus, Activity, BedDouble } from "lucide-react";
+import { Search, Users } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import { TrendingUp } from 'lucide-react';
 export default function Dashboard() {
   const [count,setCount]= useState({
@@ -16,7 +17,7 @@ export default function Dashboard() {
       try {
         const response = await fetch('http://localhost:3001/api/patient-count');
         const data = await response.json();
-       console.log(data) // Set the fetched data to state
+       console.log(data) 
        setCount(data)
       } 
       catch(e){
@@ -24,37 +25,12 @@ export default function Dashboard() {
       }
     };
 
-    fetchData();  // Call the async function to fetch data
+    fetchData();  
   }, []); 
   return (
     <div className="min-h-screen bg-blue-100">
+     <Header/>
      
-      <header className=" bg-blue-100">
-        <div className="max-w-7xl  mx-auto px-4 py-4 flex flex-col gap-2 sm:flex-row  items-center justify-between">
-          <div className="flex items-center p-5 border rounded-xl   bg-white font-bold text-[24px] ">
-          Narayana Nethralay
-          </div>
-          <div className="flex items-center md:flex-row flex-col  p-4 rounded-xl border bg-white sm:gap-6">
-            <div className="mr-8">
-            <h1 className="text-xl lg:block hidden font-bold text-[24px] text-gray-800">
-            Narayana Eye Hospital
-          </h1>
-            </div>
-            <div className="relative mr-8">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 h-5 w-5" />
-              <input
-                type="text"
-                placeholder="Search"
-                className="pl-10 pr-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 w-64"
-              />
-            </div>
-            <div className="flex text-center sm:text-right flex-col ">
-              <span className="font-medium">Admin</span>
-              <span className="text-sm text-gray-500">hello@samwhitaker.com</span>
-            </div>
-          </div>
-        </div>
-      </header>
 
       <main className="max-w-7xl  mx-auto px-4 py-1">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -72,7 +48,7 @@ export default function Dashboard() {
 
             {/* Stats Grid */}
             <div className="grid grid-cols-3 gap-4">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="bg-white p-6 rounded-lg border-2 border-gray-300  shadow-sm">
                 <div className="flex sm:flex-row flex-col justify-between items-center">
                   <h3 className="text-gray-500 font-medium">Views</h3>
                   <span className="text-green-500 text-sm flex">
@@ -86,7 +62,7 @@ export default function Dashboard() {
                 </div>
                 <p className="text-3xl font-bold mt-2">7,265</p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="bg-white p-6  border-2 border-gray-300 rounded-lg shadow-sm">
                 <div className="flex sm:flex-row flex-col justify-between items-center">
                   <h3 className="text-gray-500 font-medium">New Users</h3>
                   <span className="text-green-500 text-sm flex">
@@ -97,7 +73,7 @@ export default function Dashboard() {
                 </div>
                 <p className="text-3xl font-bold mt-2">256</p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="bg-white p-6  border-2 border-gray-300 rounded-lg shadow-sm">
                 <div className="flex sm:flex-row flex-col justify-between items-center">
                   <h3 className="text-gray-500  sm:text-[16px] text-[14px] font-medium">Active Users</h3>
                   <span className="text-green-500 text-sm flex">
@@ -137,7 +113,7 @@ export default function Dashboard() {
                 </div>
                 
               </div>
-              <div className="bg-white p-6 col-span-2  rounded-lg shadow-sm">
+              <div className="bg-white p-6 col-span-2  border-2 border-gray-300  rounded-lg shadow-sm">
               <h3 className="font-semibold mb-4">Notifications</h3>
               <div >
                 {[
@@ -166,7 +142,7 @@ export default function Dashboard() {
           </div>
 
           {/* Right Section - Employee Status */}
-          <div className="space-y-4 p-5 bg-white">
+          <div className="space-y-4 p-5  border-2 border-gray-300 rounded-lg bg-white">
             <h2 className="text-2xl font-semibold">Employee Status</h2>
             <div className="grid grid-cols-3  gap-4">
               {[
@@ -194,7 +170,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="grid mt-7 grid-cols-7 md:grid-cols-7 gap-4">
+        <div className="grid mt-7 grid-cols-7 md:grid-cols-7  gap-4">
           <div className="bg-white py-12 rounded-2xl border-2 border-gray-300"></div>
           <div className="bg-white py-12 rounded-2xl border-2 border-gray-300"></div>
           <div className="bg-white py-12 rounded-2xl border-2 border-gray-300"></div>
