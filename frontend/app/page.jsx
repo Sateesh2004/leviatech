@@ -1,12 +1,67 @@
 "use client";
 
-import { Search, Users } from "lucide-react";
+import { LoaderCircle, Search, Users } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { ToastContainer, toast } from 'react-toastify';
 import { TrendingUp } from 'lucide-react';
 export default function Dashboard() {
+  const [popUp,setPopUp]=useState(false)
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    dateOfBirth: "",
+    patientType: "",
+  });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+  
+    try {
+     
+      const response = await fetch('https://leviabackend-production.up.railway.app/api/patients', {
+        method: 'POST',
+        credentials: "include",
+        headers: {
+          'Content-Type': 'application/json', 
+        },
+        body: JSON.stringify(formData), 
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        toast.success("Patient Added Successfully");
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          dateOfBirth: '',
+          patientType: '', // Reset patientType as well
+        });
+       
+
+        setPopUp(false);  
+      } else {
+        const error = await response.json();
+        toast.error(error.message);
+        
+      }
+    } catch (err) {
+      console.error('Error:', err);
+      alert(err);
+    }
+  };
+  
   const [count,setCount]= useState({
    
   })
@@ -15,7 +70,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/patient-count');
+        const response = await fetch('https://leviabackend-production.up.railway.app/api/patient-count');
         const data = await response.json();
        console.log(data) 
        setCount(data)
@@ -29,6 +84,90 @@ export default function Dashboard() {
   }, []); 
   return (
     <div className="min-h-screen bg-blue-100">
+       <ToastContainer />
+      {popUp && (
+  <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="bg-white p-6 rounded-md shadow-lg w-96">
+      <h2 className="text-xl font-bold mb-4">Add Patient Details</h2>
+      <form
+        onSubmit={handleSubmit}
+      >
+        <input
+          type="text"
+          name="firstName"
+            value={formData.firstName}
+            onChange={handleChange}
+          placeholder="First Name"
+          className="w-full p-2 mb-2 border rounded"
+          required
+        />
+        <input
+          type="text"
+          name="lastName"
+            value={formData.lastName}
+            onChange={handleChange}
+          placeholder="Last Name"
+          className="w-full p-2 mb-2 border rounded"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          placeholder="Email"
+          className="w-full p-2 mb-2 border rounded"
+          required
+        />
+        <input
+          type="text"
+          name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+          placeholder="Phone"
+          className="w-full p-2 mb-2 border rounded"
+          required
+        />
+        <input
+          type="date"
+          name="dateOfBirth"
+          value={formData.dateOfBirth}
+          onChange={handleChange}
+          placeholder="Date of Birth"
+          className="w-full p-2 mb-2 border rounded"
+          required
+        />
+        <select
+          name="patientType"
+          value={formData.patientType}
+          onChange={handleChange}
+          className="w-full p-2 mb-4 border rounded"
+          required
+        >
+          <option value="" disabled selected>
+            Select Patient Type
+          </option>
+          <option value="OPD">OPD</option>
+          <option value="IPD">IPD</option>
+        </select>
+        <button
+          type="submit"
+          className="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-950"
+        >
+          Submit
+        </button>
+        <button
+          type="button"
+          className="ml-2 bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-600"
+          onClick={() => setPopUp(false)}
+        >
+          Cancel
+        </button>
+      </form>
+    </div>
+  </div>
+)}
+
      <Header/>
      
 
@@ -91,9 +230,9 @@ export default function Dashboard() {
               <div className="bg-white relative shadow-black shadow-xl  col-span-1  rounded-lg text-white">
                 
                 <div className="absolute h-[50%] rounded-lg w-full bg-white top-0">
-                <h3 className="text-4xl font-bold text-cyan-500 text-center leading-[110px]">
+                <h3 className="text-4xl font-bold text-cyan-500 flex justify-center items-center h-full text-center leading-[110px]">
                   
-                  {count.opdCount||"Loading"}
+                {count.ipdCount||<div> <LoaderCircle className="animate-spin h-10 w-10" /></div>}
                   </h3>
                 </div>
                 <div className="absolute h-[50%] rounded-lg w-full bg-cyan-500 bottom-0">
@@ -105,7 +244,7 @@ export default function Dashboard() {
               <div className="bg-white relative  shadow-black shadow-xl  col-span-1  rounded-lg text-white">
                 
                 <div className="absolute h-[50%] rounded-lg w-full bg-white top-0">
-                <h3 className="text-4xl font-bold text-blue-900 text-center leading-[110px]">{count.ipdCount||"Loading"}</h3>
+                <h3 className="text-4xl font-bold text-blue-900 text-center h-full leading-[110px] flex justify-center items-center border">{count.ipdCount||<div> <LoaderCircle className="animate-spin h-10 w-10" /></div>}</h3>
                 </div>
                 <div className="absolute h-[50%] rounded-lg w-full bg-blue-900 bottom-0">
          
@@ -166,6 +305,9 @@ export default function Dashboard() {
             </div>
             <button className="w-full bg-blue-900 text-white py-3 rounded-lg font-medium hover:bg-blue-800 transition-colors">
               Employ management
+            </button>
+            <button onClick={()=>{setPopUp(!popUp)}} className="w-full bg-blue-900 text-white py-3 rounded-lg font-medium hover:bg-blue-800 transition-colors">
+              Add Patient
             </button>
           </div>
         </div>

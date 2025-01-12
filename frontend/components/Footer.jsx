@@ -5,6 +5,7 @@ import { Activity, House, LayoutDashboard, Settings, UsersRound } from 'lucide-r
 
 export default function Footer() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+ 
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -14,6 +15,7 @@ export default function Footer() {
     <>
       {/* Navbar */}
       <nav className="flex items-center 2xl:fixed 2xl:bottom-0  w-full justify-between px-6 py-3 mt-2 bg-white text-white">
+        
         {/* Logo */}
         <div className=" text-violet-700 text-[24px] font-extrabold ml-12">HNSMBL</div>
 
@@ -34,7 +36,7 @@ export default function Footer() {
          <Activity className="text-4xl text-center text-blue-900 cursor-pointer" />
           <div className='text-center cursor-pointer text-blue-900  mt-2 '>    Staff Flows</div>
          </div>
-         <div className='flex flex-col items-center'>
+         <div  className='flex flex-col items-center'>
       
          <Settings className="text-3xl text-center text-black cursor-pointer" />
           <div className='text-black cursor-pointer text-center mt-2 '>    Settings</div>
@@ -91,7 +93,7 @@ export default function Footer() {
           <div className='flex flex-row '>
           <Activity className="text-2xl text-black cursor-pointer mr-2 " /> <div className='text-[18px]   text-black'>Staff Flows</div> 
           </div>
-          <div  className='flex flex-row '>
+          <div   className='flex flex-row  '>
           <Settings className="text-2xl text-white cursor-pointer mr-2 " /> <div className='text-[18px]'>Settings</div> 
           </div>
           <div className='flex flex-row '>
