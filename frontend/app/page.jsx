@@ -232,7 +232,7 @@ export default function Dashboard() {
                 <div className="absolute h-[50%] rounded-lg w-full bg-white top-0">
                 <h3 className="text-4xl font-bold text-cyan-500 flex justify-center items-center h-full text-center leading-[110px]">
                   
-                {count.ipdCount||<div> <LoaderCircle className="animate-spin h-10 w-10" /></div>}
+                {count.opdCount||<div> <LoaderCircle className="animate-spin h-10 w-10" /></div>}
                   </h3>
                 </div>
                 <div className="absolute h-[50%] rounded-lg w-full bg-cyan-500 bottom-0">
