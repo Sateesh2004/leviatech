@@ -91,7 +91,7 @@ export default function Footer() {
           <div className='flex flex-row '>
           <Activity className="text-2xl text-black cursor-pointer mr-2 " /> <div className='text-[18px]   text-black'>Staff Flows</div> 
           </div>
-          <div className='flex flex-row '>
+          <div  className='flex flex-row '>
           <Settings className="text-2xl text-white cursor-pointer mr-2 " /> <div className='text-[18px]'>Settings</div> 
           </div>
           <div className='flex flex-row '>
