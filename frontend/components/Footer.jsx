@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <>
       {/* Navbar */}
-      <nav className="flex items-center 2xl:fixed 2xl:bottom-0  w-full justify-between px-6 py-3 mt-2 bg-white text-white">
+      <nav className="flex items-center 2xl:fixed 2xl:bottom-0  w-full justify-between px-6 py-2 mt-2 bg-white text-white">
         
         {/* Logo */}
         <div className=" text-violet-700 text-[24px] font-extrabold ml-12">HNSMBL</div>
