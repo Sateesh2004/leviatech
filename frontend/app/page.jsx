@@ -226,55 +226,70 @@ export default function Dashboard() {
             </div>
 
             {/* Patient Stats */}
-            <div className="grid grid-cols-4 gap-4">
-              <div className="bg-white relative shadow-black shadow-xl  col-span-1  rounded-lg text-white">
-                
-                <div className="absolute h-[50%] rounded-lg w-full bg-white top-0">
-                <h3 className="text-4xl font-bold text-cyan-500 flex justify-center items-center h-full text-center leading-[110px]">
-                  
-                {count.opdCount||<div> <LoaderCircle className="animate-spin h-10 w-10" /></div>}
-                  </h3>
-                </div>
-                <div className="absolute h-[50%] rounded-lg w-full bg-cyan-500 bottom-0">
-                
-                <p className="mt-2 text-center px-10 pt-2 font-semibold text-[12px] sm:text-[20px]">Total OPD patients</p>
-                </div>
-                
-              </div>
-              <div className="bg-white relative  shadow-black shadow-xl  col-span-1  rounded-lg text-white">
-                
-                <div className="absolute h-[50%] rounded-lg w-full bg-white top-0">
-                <h3 className="text-4xl font-bold text-blue-900 text-center h-full leading-[110px] flex justify-center items-center border">{count.ipdCount||<div> <LoaderCircle className="animate-spin h-10 w-10" /></div>}</h3>
-                </div>
-                <div className="absolute h-[50%] rounded-lg w-full bg-blue-900 bottom-0">
-         
-                <p className="mt-2 text-center px-10 pt-2 font-semibold text-[12px] sm:text-[20px]">Total IPD patients</p>
-                </div>
-                
-              </div>
-              <div className="bg-white p-6 col-span-2  border-2 border-gray-300  rounded-lg shadow-sm">
-              <h3 className="font-semibold mb-4">Notifications</h3>
-              <div >
-                {[
-                  { message: "You fixed a bug.", time: "Just now" },
-                  { message: "New user registered.", time: "29 minutes ago" },
-                  { message: "New user registered.", time: "59 minutes ago" },
-                ].map((notification, index) => (
-                  <div key={index} className="flex items-center gap-3 text-sm">
-                    <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
-                      <Users className="h-4 w-4 text-blue-600" />
-                    </div>
-                    <div>
-                      <p className="text-gray-800">{notification.message}</p>
-                      <p className="text-gray-400 text-xs">{notification.time}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-              
-              
-            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+  {/* Card 1: OPD Count */}
+  <div className="relative shadow-black shadow-xl rounded-lg h-36 sm:h-44 md:h-48 lg:h-56">
+    <div className="h-1/2 bg-white flex justify-center items-center rounded-t-lg">
+      <h3 className="text-4xl font-bold text-cyan-500">
+        {count.opdCount || (
+          <div>
+            <LoaderCircle className="animate-spin h-10 w-10" />
+          </div>
+        )}
+      </h3>
+    </div>
+    <div className="h-1/2 bg-cyan-500 flex justify-center items-center rounded-lg">
+      <p className="text-center font-semibold text-white text-[14px] sm:text-[18px]">
+        Total OPD patients
+      </p>
+    </div>
+  </div>
+
+  {/* Card 2: IPD Count */}
+  <div className="relative shadow-black shadow-xl rounded-lg h-36 sm:h-44 md:h-48 lg:h-56">
+    <div className="h-1/2 bg-white flex justify-center items-center rounded-t-lg">
+      <h3 className="text-4xl font-bold text-blue-900">
+        {count.ipdCount || (
+          <div>
+            <LoaderCircle className="animate-spin h-10 w-10" />
+          </div>
+        )}
+      </h3>
+    </div>
+    <div className="h-1/2 bg-blue-900 flex justify-center items-center rounded-lg">
+      <p className="text-center font-semibold text-white text-[14px] sm:text-[18px]">
+        Total IPD patients
+      </p>
+    </div>
+  </div>
+
+  {/* Card 3: Notifications */}
+  <div className="bg-white p-6 col-span-1 sm:col-span-2 lg:col-span-2 border-2 border-gray-300 rounded-lg shadow-sm">
+    <h3 className="font-semibold mb-4">Notifications</h3>
+    <div>
+      {[
+        { message: "You fixed a bug.", time: "Just now" },
+        { message: "New user registered.", time: "29 minutes ago" },
+        { message: "New user registered.", time: "59 minutes ago" },
+      ].map((notification, index) => (
+        <div
+          key={index}
+          className="flex items-center gap-3 text-sm sm:text-base"
+        >
+          <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
+            <Users className="h-4 w-4 text-blue-600" />
+          </div>
+          <div>
+            <p className="text-gray-800">{notification.message}</p>
+            <p className="text-gray-400 text-xs">{notification.time}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+
 
             {/* Notifications */}
            
