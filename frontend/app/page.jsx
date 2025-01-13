@@ -199,7 +199,7 @@ export default function Dashboard() {
                   
 
                 </div>
-                <p className="text-3xl font-bold mt-2">7,265</p>
+                <p className="sm:text-3xl text-[16px] text-center sm:text-left  font-bold mt-2">7,265</p>
               </div>
               <div className="bg-white p-6  border-2 border-gray-300 rounded-lg shadow-sm">
                 <div className="flex sm:flex-row flex-col justify-between items-center">
@@ -210,7 +210,7 @@ export default function Dashboard() {
                      <TrendingUp className="h-4 w-4" />
                      </span>
                 </div>
-                <p className="text-3xl font-bold mt-2">256</p>
+                <p className="sm:text-3xl font-bold  text-[16px] sm:text-left  text-center mt-2">256</p>
               </div>
               <div className="bg-white p-6  border-2 border-gray-300 rounded-lg shadow-sm">
                 <div className="flex sm:flex-row flex-col justify-between items-center">
@@ -221,7 +221,7 @@ export default function Dashboard() {
                      <TrendingUp className="h-4 w-4" />
                      </span>
                 </div>
-                <p className="text-3xl font-bold mt-2">2,318</p>
+                <p className="sm:text-3xl font-bold  text-[16px] sm:text-left text-center mt-2">2,318</p>
               </div>
             </div>
 
