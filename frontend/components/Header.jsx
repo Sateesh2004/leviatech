@@ -14,12 +14,12 @@ const Header = () => {
         Narayana Eye Hospital
       </h1>
         </div>
-        <div className="relative mr-8">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 h-5 w-5" />
+        <div className="relative mr-8 border-b-2">
+          <Search className="absolute left-1 top-1/2 -translate-y-1/2 text-gray-400 h-7 w-7" />
           <input
             type="text"
             placeholder="Search"
-            className="pl-10 pr-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 w-64"
+            className="pl-10 pr-4 py-2 rounded-lg  border-gray-200  w-64"
           />
         </div>
         <div className="flex text-center sm:text-right flex-col ">

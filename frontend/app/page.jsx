@@ -187,7 +187,7 @@ export default function Dashboard() {
 
             {/* Stats Grid */}
             <div className="grid grid-cols-3 gap-4">
-              <div className="bg-white p-6 rounded-lg border-2 border-gray-300  shadow-sm">
+              <div className="bg-white p-6 rounded-2xl border-2 border-gray-300  shadow-sm">
                 <div className="flex sm:flex-row flex-col justify-between items-center">
                   <h3 className="text-gray-500 font-medium">Views</h3>
                   <span className="text-green-500 text-sm flex">
@@ -201,7 +201,7 @@ export default function Dashboard() {
                 </div>
                 <p className="sm:text-3xl text-[16px] text-center sm:text-left  font-bold mt-2">7,265</p>
               </div>
-              <div className="bg-white p-6  border-2 border-gray-300 rounded-lg shadow-sm">
+              <div className="bg-white p-6  border-2 border-gray-300 rounded-2xl shadow-sm">
                 <div className="flex sm:flex-row flex-col justify-between items-center">
                   <h3 className="text-gray-500 font-medium">New Users</h3>
                   <span className="text-green-500 text-sm flex">
@@ -212,7 +212,7 @@ export default function Dashboard() {
                 </div>
                 <p className="sm:text-3xl font-bold  text-[16px] sm:text-left  text-center mt-2">256</p>
               </div>
-              <div className="bg-white p-6  border-2 border-gray-300 rounded-lg shadow-sm">
+              <div className="bg-white p-6  border-2 border-gray-300 rounded-2xl shadow-sm">
                 <div className="flex sm:flex-row flex-col justify-between items-center">
                   <h3 className="text-gray-500  sm:text-[16px] text-[14px] font-medium">Active Users</h3>
                   <span className="text-green-500 text-sm flex">
