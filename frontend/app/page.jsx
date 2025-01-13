@@ -181,7 +181,7 @@ export default function Dashboard() {
               <input
                 type="text"
                 placeholder="Search"
-                className="pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+                className="pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-900 w-full"
               />
             </div>
 
@@ -237,7 +237,7 @@ export default function Dashboard() {
                 </div>
                 <div className="h-[50%] rounded-lg w-full bg-cyan-500 bottom-0">
                 
-                <p className="mt-2 text-center px-10 sm:pt-2 pt-6 font-semibold text-[18px] sm:text-[20px]">Total OPD patients</p>
+                <p className="mt-2 text-center px-10 sm:pt-2 pt-4 font-semibold text-[18px] sm:text-[20px]">Total OPD patients</p>
                 </div>
                 
               </div>
@@ -248,7 +248,7 @@ export default function Dashboard() {
                 </div>
                 <div className="h-[50%] rounded-lg w-full bg-blue-900 bottom-0">
          
-                <p className="mt-2 text-center px-10 pt-6 sm:pt-2 font-semibold text-[18px]  sm:text-[20px]">Total IPD patients</p>
+                <p className="mt-2 text-center px-10 pt-4 sm:pt-2 font-semibold text-[18px]  sm:text-[20px]">Total IPD patients</p>
                 </div>
                 
               </div>

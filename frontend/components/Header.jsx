@@ -19,7 +19,7 @@ const Header = () => {
           <input
             type="text"
             placeholder="Search"
-            className="pl-10 pr-4 py-2 rounded-lg  border-gray-200  w-64"
+            className="pl-10 pr-4 py-2 rounded-lg  border-gray-200 focus:outline-none w-64"
           />
         </div>
         <div className="flex text-center sm:text-right flex-col ">
