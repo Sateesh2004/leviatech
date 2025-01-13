@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className=" bg-blue-100">
     <div className="max-w-7xl  mx-auto px-4 py-4 flex flex-col gap-2 sm:flex-row  items-center justify-between">
-      <div className="flex items-center w-[100%] sm:w-auto p-5 border rounded-xl   bg-white font-bold text-[20px] lg:text-[24px] ">
+      <div className="flex items-center w-[100%] sm:w-auto p-6 border rounded-xl   bg-white font-bold text-[20px] lg:text-[24px] ">
       Narayana Nethralay
       </div>
       <div className="flex items-center w-[100%] sm:w-auto md:flex-row flex-col  p-4 rounded-xl border bg-white sm:gap-6">
