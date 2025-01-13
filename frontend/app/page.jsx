@@ -237,7 +237,7 @@ export default function Dashboard() {
                 </div>
                 <div className="h-[50%] rounded-lg w-full bg-cyan-500 bottom-0">
                 
-                <p className="mt-2 text-center px-10 pt-8 sm:pt-2 pt-2 font-semibold text-[18px] sm:text-[20px]">Total OPD patients</p>
+                <p className="mt-2 text-center px-10 sm:pt-2 pt-6 font-semibold text-[18px] sm:text-[20px]">Total OPD patients</p>
                 </div>
                 
               </div>
@@ -248,7 +248,7 @@ export default function Dashboard() {
                 </div>
                 <div className="h-[50%] rounded-lg w-full bg-blue-900 bottom-0">
          
-                <p className="mt-2 text-center px-10 pt-8 sm:pt-2 font-semibold text-[18px]  sm:text-[20px]">Total IPD patients</p>
+                <p className="mt-2 text-center px-10 pt-6 sm:pt-2 font-semibold text-[18px]  sm:text-[20px]">Total IPD patients</p>
                 </div>
                 
               </div>
