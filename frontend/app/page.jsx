@@ -226,29 +226,29 @@ export default function Dashboard() {
             </div>
 
             {/* Patient Stats */}
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-rows-2 sm:grid-rows-1 sm:grid-cols-4 gap-4">
               <div className="bg-white relative shadow-black shadow-xl  col-span-1  rounded-lg text-white">
                 
-                <div className="absolute h-[50%] rounded-lg w-full bg-white top-0">
+                <div className="h-[50%] rounded-lg w-full bg-white top-0">
                 <h3 className="text-4xl font-bold text-cyan-500 flex justify-center items-center h-full text-center leading-[110px]">
                   
                 {count.opdCount||<div> <LoaderCircle className="animate-spin h-10 w-10" /></div>}
                   </h3>
                 </div>
-                <div className="absolute h-[50%] rounded-lg w-full bg-cyan-500 bottom-0">
+                <div className="h-[50%] rounded-lg w-full bg-cyan-500 bottom-0">
                 
-                <p className="mt-2 text-center px-10 pt-2 font-semibold text-[12px] sm:text-[20px]">Total OPD patients</p>
+                <p className="mt-2 text-center px-10 pt-8 sm:pt-2 pt-2 font-semibold text-[18px] sm:text-[20px]">Total OPD patients</p>
                 </div>
                 
               </div>
               <div className="bg-white relative  shadow-black shadow-xl  col-span-1  rounded-lg text-white">
                 
-                <div className="absolute h-[50%] rounded-lg w-full bg-white top-0">
-                <h3 className="text-4xl font-bold text-blue-900 text-center h-full leading-[110px] flex justify-center items-center border">{count.ipdCount||<div> <LoaderCircle className="animate-spin h-10 w-10" /></div>}</h3>
+                <div className="h-[50%] rounded-lg w-full bg-white top-0">
+                <h3 className="text-4xl font-bold text-blue-900 text-center h-full leading-[110px] flex justify-center items-center ">{count.ipdCount||<div> <LoaderCircle className="animate-spin h-10 w-10" /></div>}</h3>
                 </div>
-                <div className="absolute h-[50%] rounded-lg w-full bg-blue-900 bottom-0">
+                <div className="h-[50%] rounded-lg w-full bg-blue-900 bottom-0">
          
-                <p className="mt-2 text-center px-10 pt-2 font-semibold text-[12px] sm:text-[20px]">Total IPD patients</p>
+                <p className="mt-2 text-center px-10 pt-8 sm:pt-2 font-semibold text-[18px]  sm:text-[20px]">Total IPD patients</p>
                 </div>
                 
               </div>
